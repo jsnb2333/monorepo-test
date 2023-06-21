@@ -1,0 +1,13 @@
+{
+  "name": "@jsnb2333/utils",
+  "version": "0.0.1",
+  "description": "公共工具库",
+  "main": "index.js",
+  "author": "jishuo",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "form-data": "^4.0.0",
+    "qs": "^6.11.2"
+  }
+}

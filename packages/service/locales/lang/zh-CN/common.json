@@ -1,0 +1,38 @@
+{
+  "button": {
+    "cancel": "取消",
+    "reset": "重置",
+    "save": "保存",
+    "submit": "提交",
+    "update": "编辑"
+  },
+  "cancel": "取消",
+  "drawer": {
+    "title": {
+      "add": "新增表格数据",
+      "update": "修改表格数据"
+    }
+  },
+  "end": "完成",
+  "finally": "提交完毕",
+  "form": {
+    "input": "请输入{msg}！",
+    "selection": "请选择{msg}！",
+    "required": "{msg}是必填项！",
+    "currentRequired": "请填写必填项！"
+  },
+  "message": {
+    "login": {
+      "success": "登录成功"
+    },
+    "logout": {
+      "error": "退出登录失败",
+      "success": "退出登录成功"
+    },
+    "request": {
+      "error": "登录已过期，请重新登录"
+    }
+  },
+  "ok": "确定",
+  "spinTip": "加载中..."
+}

@@ -1,0 +1,12 @@
+{
+  "clipboardText": "拷贝到剪切板",
+  "downloadUrlFile": "下载",
+  "message": {
+    "clipboardTextError": "拷贝剪切板失败",
+    "clipboardTextSuccess": "拷贝剪切板成功",
+    "createObjectURLError": "生成json文件失败，请联系管理员",
+    "error": "数据不存在，请稍后再试",
+    "jsonError": "json序列化失败，请联系管理员"
+  },
+  "openWindow": "新窗口打开"
+}
