@@ -1,14 +1,14 @@
 <script setup>
-import { ref, computed, inject, watch } from "vue";
-import NavSubMenu from "./NavSubMenu.vue";
-import { useRouter, useRoute } from "vue-router";
-import { treeToListDeep } from "../helpers";
+import { ref, computed, inject, watch } from 'vue';
+import NavSubMenu from './NavSubMenu.vue';
+import { useRouter, useRoute } from 'vue-router';
+import { treeToListDeep } from '../helpers';
 
 const router = useRouter();
 const route = useRoute();
 
-const menuList = inject("menuList");
-const leftSidebarLoading = inject("leftSidebarLoading");
+const menuList = inject('menuList');
+const leftSidebarLoading = inject('leftSidebarLoading');
 
 //  打开的key值对应菜单的path值
 const openKeys = ref([]);
@@ -27,7 +27,7 @@ watch(
   () => route.path,
   () => {
     // 防止情况：没找到current就会跳转到404界面，但高亮没有去除。
-    selectedKeys.value[0] = "";
+    selectedKeys.value[0] = '';
     openKeys.value = [];
 
     const current = findCurrent(route.path);
@@ -36,12 +36,12 @@ watch(
       openKeys.value = current.allPath.slice(0, -1);
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 function findCurrent(currentPath) {
   // 对edit做特殊处理
-  const newCurrentPath = currentPath.replace(/\/edit/, "");
+  const newCurrentPath = currentPath.replace(/\/edit/, '');
   return menuListFlatten.value.find((item) => item.path === newCurrentPath);
 }
 

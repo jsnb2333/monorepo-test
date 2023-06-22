@@ -1,9 +1,9 @@
 <script setup>
-import { provide } from "vue";
+import { provide } from 'vue';
 
-import Header from "./components/Header.vue";
-import Sidebar from "./components/Sidebar.vue";
-import BaseContent from "./components/BaseContent.vue";
+import Header from './components/Header.vue';
+import Sidebar from './components/Sidebar.vue';
+import BaseContent from './components/BaseContent.vue';
 
 const props = defineProps({
   menuList: {
@@ -18,17 +18,17 @@ const props = defineProps({
   username: {
     type: String,
     default: {
-      value: "",
+      value: '',
     },
   },
 });
-const emits = defineEmits(["logout"]);
+const emits = defineEmits(['logout']);
 
-provide("menuList", props.menuList);
-provide("leftSidebarLoading", props.leftSidebarLoading);
+provide('menuList', props.menuList);
+provide('leftSidebarLoading', props.leftSidebarLoading);
 
 function handleLogout() {
-  emits("logout");
+  emits('logout');
 }
 </script>
 

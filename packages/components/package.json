@@ -1,8 +1,11 @@
 {
-  "name": "@shared/components",
+  "name": "@jsnb2333/components",
   "version": "1.0.10",
   "description": "公共组件库",
   "main": "index.js",
-  "author": "jishuo",
-  "license": "MIT"
+  "author": "jsnb2333",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
 }

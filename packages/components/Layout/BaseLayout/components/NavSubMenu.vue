@@ -1,5 +1,5 @@
 <script setup>
-import { AIconFont } from "../../../index";
+import { AIconFont } from '../../../index';
 
 const props = defineProps({
   menuList: {
@@ -13,7 +13,7 @@ const props = defineProps({
 
 <script>
 export default {
-  name: "NavSubMenu",
+  name: 'NavSubMenu',
 };
 </script>
 
@@ -51,7 +51,7 @@ export default {
             {{ subMenu.title }}
           </template>
           <span class="menu-item-text">
-            {{ props.isChildren ? "- " + subMenu.title : subMenu.title }}
+            {{ props.isChildren ? '- ' + subMenu.title : subMenu.title }}
           </span>
         </a-tooltip>
       </a-menu-item>

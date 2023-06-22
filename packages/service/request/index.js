@@ -1,6 +1,6 @@
 // import { getT } from "../locales";
 
-import axios from "axios";
+import axios from 'axios';
 
 // const t = getT();
 
@@ -12,21 +12,21 @@ function createAxiosInstance(createParams) {
   // 创建 axios 实例
   const instance = axios.create({
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "X-Requested-With": "X-Requested-With",
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'X-Requested-With': 'X-Requested-With',
     },
     baseURL: import.meta.env.DEV
-      ? "/proxy-pattern"
+      ? '/proxy-pattern'
       : import.meta.env.VITE_BASEURL,
-    ...createParams
+    ...createParams,
   });
 
   instance.interceptors.request.use((config) => {
     // 在发送请求之前做些什么
 
     // 全局过滤GET请求，无用查询参数，这样我们只需要设置为空值就不会作为查询参数
-    if (config.method === "get" && config.params) {
+    if (config.method === 'get' && config.params) {
       const _params = filterNullValueObject(config.params);
       config.params = _params;
     }
@@ -60,7 +60,7 @@ function createAxiosInstance(createParams) {
       //   return handleError(t("common.message.request.error"));
       // }
       return handleError(error.response.data);
-    }
+    },
   );
 
   return instance;
@@ -86,7 +86,7 @@ function filterNullValueObject(obj) {
 
   for (let key in obj) {
     // 如果查询条件为空或者undefined/null/''，就忽略
-    if (obj[key] === undefined || obj[key] === null || obj[key] === "") {
+    if (obj[key] === undefined || obj[key] === null || obj[key] === '') {
       continue;
     }
 
@@ -111,7 +111,7 @@ function filterNullValueObject(obj) {
 function createRequest(instance, requestHeaders = () => ({})) {
   return (config = {}) => {
     if (Object.keys(config).length === 0) {
-      throw new Error("request 函数没有配置");
+      throw new Error('request 函数没有配置');
     }
 
     const headers = requestHeaders(config);

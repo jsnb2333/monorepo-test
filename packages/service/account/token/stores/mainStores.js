@@ -1,42 +1,44 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const MainStores = defineStore('mainStores', {
   state: () => ({
     userAttestation: {
       username: '',
-      password: ''
+      password: '',
     },
     user: null,
-    domainId: 1
+    domainId: 1,
   }),
   actions: {
     setUserAttestation({ userFrom, user }) {
-      this.userAttestation = userFrom
-      this.user = user
-      this.setLocalStorageUser(user.username)
-      this.setLocalStorageIsLogin(true)
+      this.userAttestation = userFrom;
+      this.user = user;
+      this.setLocalStorageUser(user.username);
+      this.setLocalStorageIsLogin(true);
     },
     clearUserAttestation() {
-      this.setLocalStorageUser('')
-      this.setLocalStorageIsLogin(false)
+      this.setLocalStorageUser('');
+      this.setLocalStorageIsLogin(false);
     },
     setLocalStorageUser(username) {
-      localStorage.setItem('username', username)
+      localStorage.setItem('username', username);
     },
     setLocalStorageIsLogin(is) {
-      localStorage.setItem('islogin', String(is))
+      localStorage.setItem('islogin', String(is));
     },
     getLocalStorageUser() {
-      return localStorage.getItem('username')
+      return localStorage.getItem('username');
     },
     getLocalStorageIsLogin() {
-      return localStorage.getItem('islogin') === 'true'
+      return localStorage.getItem('islogin') === 'true';
     },
     getIsLogin() {
-      return [this.getLocalStorageUser(), this.getLocalStorageIsLogin()].every(Boolean)
-    }
+      return [this.getLocalStorageUser(), this.getLocalStorageIsLogin()].every(
+        Boolean,
+      );
+    },
   },
   persist: {
-    enabled: true // 启用插件
-  }
-})
+    enabled: true, // 启用插件
+  },
+});

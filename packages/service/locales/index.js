@@ -1,28 +1,29 @@
-import { createI18n } from "vue-i18n";
-import enUS from "ant-design-vue/es/locale/en_US";
-import zhCN from "ant-design-vue/es/locale/zh_CN";
-import dayjs from "dayjs";
+import { createI18n } from 'vue-i18n';
+import enUS from 'ant-design-vue/es/locale/en_US';
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+import dayjs from 'dayjs';
 
-import { genMessage } from "./helpers";
-import { rulesT } from "./rulesT";
-import { setI18nLocal, getI18nLocal } from "./helpers";
+import { genMessage } from './helpers';
+import { rulesT } from './rulesT';
+import { setI18nLocal, getI18nLocal } from './helpers';
 
-const commonZhCN = import.meta.glob("./lang/zh-CN/*.json", { eager: true });
-const commonEn = import.meta.glob("./lang/en/*.json", { eager: true });
+const commonZhCN = import.meta.glob('./lang/zh-CN/*.json', { eager: true });
+const commonEn = import.meta.glob('./lang/en/*.json', { eager: true });
 
-const projectZhCN = import.meta.glob("@/locales/lang/zh-CN/*.json", { eager: true,});
-const projectEn = import.meta.glob("@/locales/lang/en/*.json", { eager: true });
+const projectZhCN = import.meta.glob('@/locales/lang/zh-CN/*.json', {
+  eager: true,
+});
+const projectEn = import.meta.glob('@/locales/lang/en/*.json', { eager: true });
 
-const viewsZhCN = import.meta.glob("@/views/**/zh-CN/*.json", { eager: true });
-const viewsEn = import.meta.glob("@/views/**/en/*.json", { eager: true });
-
+const viewsZhCN = import.meta.glob('@/views/**/zh-CN/*.json', { eager: true });
+const viewsEn = import.meta.glob('@/views/**/en/*.json', { eager: true });
 
 const i18nLocal = getI18nLocal();
 /**
  * dayjs字符串映射语言包。用于切换day和andt组件的语言。在需要在添加 https://unpkg.com/browse/ant-design-vue@3.2.17/es/locale/
  */
 export const dayMap = {
-  "zh-CN": zhCN,
+  'zh-CN': zhCN,
   en: enUS,
 };
 
@@ -30,7 +31,7 @@ export const dayMap = {
  * 汇总i18n的多语言文件对象
  */
 export const messages = {
-  "zh-CN": {
+  'zh-CN': {
     ...genMessage(commonZhCN),
     ...genMessage(projectZhCN),
     ...genMessage(viewsZhCN),
@@ -48,7 +49,7 @@ export const i18n = createI18n({
   globalInjection: true,
   global: true,
   locale: i18nLocal,
-  fallbackLocale: "en",
+  fallbackLocale: 'en',
   messages,
 });
 

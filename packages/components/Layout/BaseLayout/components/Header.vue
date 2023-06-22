@@ -3,14 +3,14 @@ import {
   CaretDownOutlined,
   LogoutOutlined,
   UserOutlined,
-} from "@ant-design/icons-vue";
+} from '@ant-design/icons-vue';
 
-const props = defineProps(['username'])
+const props = defineProps(['username']);
 
-const emits = defineEmits(["logout"]);
+const emits = defineEmits(['logout']);
 
 function handleLogout() {
-  emits("logout");
+  emits('logout');
 }
 </script>
 
@@ -31,8 +31,8 @@ function handleLogout() {
           <a-menu>
             <a-menu-item @click="handleLogout">
               <LogoutOutlined />
-              退出登录</a-menu-item
-            >
+              退出登录
+            </a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>

@@ -1,6 +1,6 @@
 <script setup>
-import { useAttrs } from "vue";
-import { InfoCircleOutlined } from "@ant-design/icons-vue";
+import { useAttrs } from 'vue';
+import { InfoCircleOutlined } from '@ant-design/icons-vue';
 
 const props = defineProps({
   title: String,

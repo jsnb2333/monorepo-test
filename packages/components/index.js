@@ -1,16 +1,16 @@
-import { BsIcons, BsI } from "./BsIcons";
-import { BsImg } from "./BsImg";
-import { AIconFont } from "./AIconFont";
-import { TableButtons } from "./BsTable";
-import { Login } from "./Login";
-import { BaseLayout, Title, Content, Header } from "./Layout";
+import { BsIcons, } from './BsIcons';
+import { ShImg } from './ShImg';
+import { ShIconFont, ShInfo } from './ShIcon';
+import { TableButtons } from './BsTable';
+import { Login } from './Login';
+import { BaseLayout, Title, Content, Header } from './Layout';
 
 export {
   BsIcons,
-  BsImg,
-  BsI,
+  ShImg,
+  ShIconFont,
+  ShInfo,
   TableButtons,
-  AIconFont,
   Login,
   BaseLayout,
   Title,

@@ -14,15 +14,15 @@ export class MyWebSocket {
 
       this.socket = new WebSocket(url);
 
-      this.socket.addEventListener("open", () => {
+      this.socket.addEventListener('open', () => {
         resolve();
       });
 
-      this.socket.addEventListener("error", (error) => {
+      this.socket.addEventListener('error', (error) => {
         reject(error);
       });
 
-      this.socket.addEventListener("message", (event) => {
+      this.socket.addEventListener('message', (event) => {
         const message = JSON.parse(event.data);
         this.listeners(message);
       });
@@ -51,7 +51,7 @@ export class MyWebSocket {
 }
 
 export function eventsSocket(data, handle) {
-  const webSocket = new MyWebSocket("/websocket/events");
+  const webSocket = new MyWebSocket('/websocket/events');
   const disconnect = webSocket.disconnect.bind(webSocket);
   webSocket.listeners = (data) => {
     handle(data.events, disconnect);

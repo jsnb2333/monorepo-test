@@ -1,9 +1,9 @@
-import { getT } from '@shared/service/locales'
+import { getT } from '@shared/service/locales';
 
-import { message } from "ant-design-vue";
+import { message } from 'ant-design-vue';
 
-import requestCase from "./requestCase";
-import { MainStores } from "./stores/mainStores";
+import requestCase from './requestCase';
+import { MainStores } from './stores/mainStores';
 
 const t = getT();
 
@@ -17,8 +17,8 @@ export async function request(config) {
   const mainStores = MainStores();
   const isLogin = mainStores.getIsLogin();
   if (!isLogin) {
-    message.error(t("common.message.request.error"));
-    return Promise.reject({ message: t("common.message.request.error") });
+    message.error(t('common.message.request.error'));
+    return Promise.reject({ message: t('common.message.request.error') });
   }
   return requestCase(config);
 }

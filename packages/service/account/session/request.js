@@ -1,11 +1,11 @@
-import { getT } from '@shared/service/locales'
+import { getT } from '@shared/service/locales';
 
-import { message } from "ant-design-vue";
+import { message } from 'ant-design-vue';
 
-import requestCase from "./requestCase";
-import { MainStores } from "./stores/mainStores";
+import requestCase from './requestCase';
+import { MainStores } from './stores/mainStores';
 
-const t = getT()
+const t = getT();
 
 /**
  * 配置拦截提供默认配置
@@ -14,15 +14,18 @@ const t = getT()
  * @returns
  */
 export async function request(config) {
-  const mainStores = MainStores()
+  const mainStores = MainStores();
   if (!mainStores.token) {
-    message.error(t('common.message.request.error'))
-    return Promise.reject({ message: t('common.message.request.error') })
+    message.error(t('common.message.request.error'));
+    return Promise.reject({ message: t('common.message.request.error') });
   }
   return requestCase({
     ...config,
-    headers: { Authorization: `Bearer ${mainStores.token}`, ...config?.headers }
-  })
+    headers: {
+      Authorization: `Bearer ${mainStores.token}`,
+      ...config?.headers,
+    },
+  });
 }
 
 /**
@@ -32,7 +35,7 @@ export async function request(config) {
  * @returns
  */
 export function api(config) {
-  return requestCase(config)
+  return requestCase(config);
 }
 
 /**
@@ -42,10 +45,10 @@ export function api(config) {
  * @returns
  */
 export function requestDomainId(cd) {
-  const domainId = getDomainId()
-  const config = cd(domainId)
+  const domainId = getDomainId();
+  const config = cd(domainId);
 
-  return request(config)
+  return request(config);
 }
 
 /**
@@ -54,8 +57,8 @@ export function requestDomainId(cd) {
  * @returns
  */
 export function getDomainId() {
-  const main = MainStores()
-  return main.domainId
+  const main = MainStores();
+  return main.domainId;
 }
 
 /**
@@ -64,5 +67,5 @@ export function getDomainId() {
  * @returns
  */
 export function getToken() {
-  return getTokenCookie()
+  return getTokenCookie();
 }

@@ -1,27 +1,27 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const MainStores = defineStore('mainStores', {
   state: () => ({
     user: {
       userId: null,
-      code: null
+      code: null,
     },
-    token: null
+    token: null,
   }),
   actions: {
     setUserAttestation({ token, user }) {
-      this.user = user
-      this.token = token
+      this.user = user;
+      this.token = token;
     },
     clearUserAttestation() {
       this.user = {
         userId: null,
-        code: null
-      }
-      this.token = null
+        code: null,
+      };
+      this.token = null;
     },
   },
   persist: {
-    enabled: true // 启用插件
-  }
-})
+    enabled: true, // 启用插件
+  },
+});

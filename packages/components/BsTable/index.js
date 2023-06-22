@@ -1,3 +1,3 @@
-import TableButtons from "./TableButtons.vue";
+import TableButtons from './TableButtons.vue';
 
 export { TableButtons };

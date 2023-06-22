@@ -1,4 +1,3 @@
-import BsIcons from "./BsIcons.vue";
-import BsI from "./BsI.vue";
+import BsIcons from './BsIcons.vue';
 
-export { BsIcons, BsI };
+export { BsIcons };

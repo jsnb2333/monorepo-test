@@ -1,13 +1,13 @@
 <script lang="jsx">
-import { isVNode } from "vue";
+import { isVNode } from 'vue';
 export default {
   props: {
     but: {
       type: Array,
-      default: () => ["renovate", "add"],
+      default: () => ['renovate', 'add'],
     },
   },
-  emits: ["add", "renovate"],
+  emits: ['add', 'renovate'],
   setup(props, { emit }) {
     const componentsMap = {
       renovate: renovateBut,
@@ -16,7 +16,7 @@ export default {
 
     function addBut() {
       return (
-        <a-button onClick={add} type="primary">
+        <a-button onClick={add} type='primary'>
           新增
         </a-button>
       );
@@ -26,13 +26,13 @@ export default {
     }
 
     function add() {
-      emit("add");
+      emit('add');
     }
     function renovate() {
-      emit("renovate");
+      emit('renovate');
     }
     return () => (
-      <div class="table-buttons">
+      <div class='table-buttons'>
         <a-space>
           {props.but.map((item) => {
             if (isVNode(item)) {
@@ -40,7 +40,7 @@ export default {
             } else {
               if (!componentsMap[item]) {
                 console.error(
-                  `${item}在componentsMap映射中不存在请到TableButtons组件中维护`
+                  `${item}在componentsMap映射中不存在请到TableButtons组件中维护`,
                 );
                 return null;
               } else {

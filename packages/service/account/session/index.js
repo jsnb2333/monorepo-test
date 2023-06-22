@@ -1,4 +1,4 @@
-import { MainStores } from "./stores/mainStores";
+import { MainStores } from './stores/mainStores';
 
 import {
   request,
@@ -6,6 +6,6 @@ import {
   requestDomainId,
   getDomainId,
   getToken,
-} from "./request.js";
+} from './request.js';
 
 export { MainStores, request, api, requestDomainId, getDomainId, getToken };

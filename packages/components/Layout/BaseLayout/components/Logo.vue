@@ -1,5 +1,5 @@
 <script setup>
-import Icon from '@ant-design/icons-vue'
+import Icon from '@ant-design/icons-vue';
 </script>
 
 <template>

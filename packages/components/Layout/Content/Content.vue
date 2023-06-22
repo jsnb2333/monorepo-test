@@ -1,10 +1,10 @@
 <script setup>
-import { Title } from "../Title";
+import { Title } from '../Title';
 const props = defineProps({
   title: String,
   padding: {
     type: String,
-    default: "15px 15px 15px 15px",
+    default: '15px 15px 15px 15px',
   },
 });
 </script>

@@ -1,29 +1,28 @@
 <script setup>
-import { reactive } from "vue";
-import { UserOutlined, KeyOutlined } from "@ant-design/icons-vue";
-import { BsImg } from "@shared/components";
-import { useI18n } from "vue-i18n";
+import { reactive } from 'vue';
+import { UserOutlined, KeyOutlined } from '@ant-design/icons-vue';
+import { BsImg } from '@shared/components';
+import { useI18n } from 'vue-i18n';
 
 const { t, rulesT } = useI18n();
 
-const emits = defineEmits(["submit"]);
+const emits = defineEmits(['submit']);
 const props = defineProps({
   loading: Boolean,
 });
 
 const formState = reactive({
-  username: "",
-  password: "",
+  username: '',
+  password: '',
 });
 
 const rules = reactive({
-  username: [{ required: true, message: rulesT.input(t("login.username")) }],
-  password: [{ required: true, message: rulesT.input(t("login.password")) }],
+  username: [{ required: true, message: rulesT.input(t('login.username')) }],
+  password: [{ required: true, message: rulesT.input(t('login.password')) }],
 });
 
-
 function handleSubmit() {
-  emits("submit", formState);
+  emits('submit', formState);
 }
 </script>
 
@@ -47,8 +46,8 @@ function handleSubmit() {
             :rules="rules.username"
           >
             <a-input v-model:value="formState.username">
-              <template #addonAfter> <UserOutlined /> </template
-            ></a-input>
+              <template #addonAfter><UserOutlined /></template>
+            </a-input>
           </a-form-item>
 
           <a-form-item
@@ -57,8 +56,8 @@ function handleSubmit() {
             :rules="rules.password"
           >
             <a-input-password v-model:value="formState.password">
-              <template #addonAfter> <KeyOutlined /> </template
-            ></a-input-password>
+              <template #addonAfter><KeyOutlined /></template>
+            </a-input-password>
           </a-form-item>
 
           <div class="buttons">
@@ -66,8 +65,9 @@ function handleSubmit() {
               type="primary"
               html-type="submit"
               :loading="props.loading"
-              >{{ t("login.login") }}</a-button
             >
+              {{ t('login.login') }}
+            </a-button>
           </div>
         </a-form>
       </div>
