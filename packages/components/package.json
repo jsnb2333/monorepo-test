@@ -1,6 +1,6 @@
 {
   "name": "@jsnb2333/components",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "公共组件库",
   "main": "index.js",
   "author": "jsnb2333",
@@ -9,6 +9,6 @@
     "prettier": "^2.8.8"
   },
   "dependencies": {
-    "@jsnb2333/sh-icon": "^0.0.2"
+    "@jsnb2333/sh-icon": "^0.0.3"
   }
 }
