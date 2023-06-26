@@ -1,0 +1,32 @@
+{
+  "name": "@jsnb2333/hello-hh",
+  "version": "0.0.12",
+  "description": "> TODO: description",
+  "author": "jsnb2333 <1357930097@qq.com>",
+  "homepage": "https://github.com/jsnb2333/monorepo-test#readme",
+  "license": "MIT",
+  "main": "lib/hello.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsnb2333/monorepo-test.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/hello.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jsnb2333/monorepo-test/issues"
+  },
+  "dependencies": {
+    "@codertocat/hello-world-npm": "^1.0.2"
+  }
+}
