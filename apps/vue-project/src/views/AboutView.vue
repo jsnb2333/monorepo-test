@@ -1,6 +1,11 @@
+<script setup>
+import { Test } from '@jsnb2333/components'
+</script>
+
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <Test />
   </div>
 </template>
 
